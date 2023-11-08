@@ -1,31 +1,78 @@
 import  { useState } from 'react';
-
+import { PiCaretUpBold, PiCaretDown } from 'react-icons/pi';
+import { LiaFileContractSolid } from 'react-icons/lia';
+import { AiFillLock} from 'react-icons/ai';
 const CourseContent = () => {
-    const [activeAccordion, setActiveAccordion] = useState(null);
-const accordionData = [
-    {id:1, title: 'Accordion 1', content: 'Content for Accordion 1' },
-    {id:2, title: 'Accordion 2', content: 'Content for Accordion 2' },
-    {id:3, title: 'Accordion 3', content: 'Content for Accordion 3' },
-    {id:4, title: 'Accordion 4', content: 'Content for Accordion 4' },
-    {id:5, title: 'Accordion 5', content: 'Content for Accordion 5' },
-    {id:6, title: 'Accordion 6', content: 'Content for Accordion 6' },
-    {id:7, title: 'Accordion 7', content: 'Content for Accordion 7' },
-  ];
+   
+    const [show, setShow] = useState(false)
+    const [two, setTwo] = useState(false)
+    
   
      
     return (
-        <div className='text-black'>
-            <h1 className='text-4xl'>thie</h1>
-            <div>
-                {
-                    accordionData.map(d =>
-                        <p key={d.id}>
-                            {d.title}
-                        </p>)
-                }
-
-
-        </div>
+        <div className='text-black w-full lg:w-[800px] my-10 mx-auto'>
+            <div className='flex justify-between items-center'>
+                <h2 className='text-3xl font-bold'>Course Content
+</h2>  <p>• 7 Chapters • 73 Lessons</p>
+         </div>
+            <div className='border  py-2 border-gray-400 rounded'>
+                <div className='border-b px-4 border-gray-400'>
+                    <div className='flex justify-between items-center cursor-pointer' onClick={()=>setShow(!show)}>
+                        <h4 className='text-2xl font-bold'>1. Introduction
+                        </h4>
+                        <p className='flex items-center'> 1 lesson  { show ? <PiCaretUpBold/>:<PiCaretDown/>}</p>
+                        
+                    </div>
+                    {
+                        show &&  <div className='flex items-center '>
+                       <span><LiaFileContractSolid/></span> <a className='ml-4' href="#">What is Dynamic Programming?</a>
+                    </div>
+                   }
+                </div>
+                <div className='border-b px-4 border-gray-400'>
+                    <div className='flex justify-between items-center cursor-pointer' onClick={()=>setTwo(!two)}>
+                        <h4 className='text-2xl font-bold'>2. Pattern 1: 0/1 Knapsack
+                        </h4>
+                        <p className='flex items-center'> 1 lesson  { two ? <PiCaretUpBold/>:<PiCaretDown/>}</p>
+                        
+                    </div>
+                    {
+                        two &&
+                        <>
+                        <div className='flex items-center '>
+                       <span><LiaFileContractSolid/></span> <a className='ml-4' href="#">Introduction</a>
+                    </div>
+                        <div className='flex items-center '>
+                       <span><LiaFileContractSolid/></span> <a className='ml-4' href="#">0/1 Knapsack</a>
+                    </div>
+                        <div className='flex items-center '>
+                       <span><LiaFileContractSolid/></span> <a className='ml-4' href="#">Solution: 0/1 Knapsack</a>
+                    </div>
+                        <div className='flex items-center '>
+                       <span><LiaFileContractSolid/></span> <a className='ml-4' href="#">Equal Subset Sum Partition</a>
+                    </div>
+                        <div className='flex items-center '>
+                       <span><LiaFileContractSolid/></span> <a className='ml-4' href="#">Solution: Equal Subset Sum Partition</a>
+                    </div>
+                        <div className='flex items-center '>
+                       <span><LiaFileContractSolid/></span> <a className='ml-4' href="#">Subset Sum</a>
+                    </div>
+                        <div className='flex items-center '>
+                       <span><AiFillLock/></span> <a className='ml-4' href="#">Solution: Subset Sum</a>
+                    </div>
+                        <div className='flex items-center '>
+                       <span><LiaFileContractSolid/></span> <a className='ml-4' href="#">Minimum Subset Sum Difference </a>
+                    </div>
+                        <div className='flex items-center '>
+                       <span><AiFillLock/></span> <a className='ml-4' href="#">Solution: Minimum Subset Sum Difference</a>
+                    </div>
+                        <div className='flex items-center '>
+                       <span><LiaFileContractSolid/></span> <a className='ml-4' href="#">Count of Subset Sum</a>
+                    </div>
+                        </>
+                   }
+                </div>
+           </div>
 
 
 

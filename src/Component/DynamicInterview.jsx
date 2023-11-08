@@ -1,7 +1,8 @@
 import { MdElectricBolt } from 'react-icons/md';
 import {AiOutlineClockCircle } from 'react-icons/ai';
 import {BiPhotoAlbum } from 'react-icons/bi';
-import {GiBookCover } from 'react-icons/gi';
+import {GiBookCover } from 'react-icons/gi';                         
+import {PiStudentBold } from 'react-icons/pi';                         
 
 const DynamicInterview = () => {
     return (
@@ -22,7 +23,7 @@ Advanced</span></p>
 142</span></p>
                     </div>
                     <div className='mt-7'>
-                         <p className='flex items-center text-base justify-center py-1 bg-slate-800 w-48'> <MdElectricBolt/> <span className='ml-1'>39,106 (Students)</span></p>
+                         <p className='flex items-center text-base justify-center py-1 bg-slate-800 w-48'> <PiStudentBold/> <span className='ml-1'>39,106 (Students)</span></p>
                     </div>
                 </div>
             </div>
