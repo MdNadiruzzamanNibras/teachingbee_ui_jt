@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const CountDown = () => {
     const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    const targetDate = new Date('2023-11-09T23:59:59')
+    const targetDate = new Date('2023-11-09T13:59:59')
      useEffect(() => {
     const updateCountdown = () => {
       const currentDate = new Date();
